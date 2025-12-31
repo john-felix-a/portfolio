@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["picsum.photos", "www.instagram.com", "instagram.com"],
+  },
   async headers() {
     return [
       {

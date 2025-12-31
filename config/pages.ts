@@ -47,12 +47,12 @@ export const pagesConfig: PagesConfig = {
     },
   },
   contributions: {
-    title: "Contributions",
-    description: "Open-source contributions and community involvement.",
+    title: "Photography",
+    description: "A glimpse into my perspective through the lens.",
     metadata: {
-      title: "Contributions",
+      title: "Photography",
       description:
-        "John's open-source contributions and community involvement.",
+        "John's photography portfolio.",
     },
   },
   resume: {

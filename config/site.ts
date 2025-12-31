@@ -1,42 +1,19 @@
+import { RESUME_DATA } from "@/app/data";
+
 export const siteConfig = {
-  name: "John Felix | Developer Portfolio",
-  authorName: "john.",
-  username: "johnfelix",
-  description:
-    "John's portfolio - A modern, responsive Next.js portfolio for developers. This open-source template can be customized to showcase your own skills, projects, and professional experience.",
-  url: "https://nbarkiya.xyz",
+  name: RESUME_DATA.personal.name,
+  username: RESUME_DATA.personal.name,
+  description: RESUME_DATA.summary,
+  keywords: ["Next.js", "React", "Tailwind CSS", "Portfolio", "Software Developer"],
+  url: "https://johnfelixa.com", // Placeholder URL based on name or need to ask user
+  ogImage: "https://johnfelixa.com/og.jpg",
+  iconIco: "/logo.png",
+  logoIcon: "/logo.png",
+  authorName: RESUME_DATA.personal.name,
   links: {
-    twitter: "https://x.com/Johnbarkiya",
-    github: "https://github.com/Johnbarkiya",
+    twitter: "https://x.com/johnfelix1098", // Placeholder
+    github: "https://github.com/johnfelix-jf", // Inferred from linkedin or just generic? User provided linkedin. 
+    linkedin: RESUME_DATA.personal.linkedin,
+    email: RESUME_DATA.personal.email,
   },
-  ogImage: "https://nbarkiya.xyz/profile-img.jpg",
-  iconIco:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357384/assets/John-favicon.ico",
-  logoIcon:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/John-logo.png",
-  keywords: [
-    "John",
-    "Full Stack Developer",
-    "Web Developer Portfolio",
-    "Next.js portfolio template",
-    "React portfolio template",
-    "Developer portfolio template",
-    "Portfolio website template",
-    "Next.js template",
-    "Modern portfolio website",
-    "Frontend developer portfolio",
-    "Full stack developer portfolio",
-    "Open source portfolio template",
-    "Web developer portfolio template",
-    "Responsive portfolio template",
-    "React.js portfolio",
-    "Tailwind CSS portfolio",
-    "Developer showcase template",
-    "Free portfolio template",
-    "Next.js 13 template",
-    "Shadcn UI template",
-    "Career timeline template",
-    "Portfolio with dark mode",
-    "GitHub portfolio template",
-  ],
 };

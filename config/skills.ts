@@ -1,4 +1,5 @@
 import { Icons } from "@/components/common/icons";
+import { RESUME_DATA } from "@/app/data";
 
 export interface skillsInterface {
   name: string;
@@ -7,159 +8,181 @@ export interface skillsInterface {
   icon: any;
 }
 
-export const skillsUnsorted: skillsInterface[] = [
-  {
+// Map of known skills to their rich definitions
+const knownSkills: Record<string, skillsInterface> = {
+  "Next.js": {
     name: "Next.js",
-    description:
-      "Effortlessly build dynamic apps with routing, layouts, loading UI, and API routes.",
+    description: "App Router, Server Components, SSR/SSG",
     rating: 5,
     icon: Icons.nextjs,
   },
-  {
+  "React.js": {
     name: "React",
-    description:
-      "Craft interactive user interfaces using components, state, props, and virtual DOM.",
+    description: "Hooks, Context, Performance Optimization",
     rating: 5,
     icon: Icons.react,
   },
-  {
+  "React": {
+    name: "React",
+    description: "Hooks, Context, Performance Optimization",
+    rating: 5,
+    icon: Icons.react,
+  },
+  "GraphQL": {
     name: "GraphQL",
-    description:
-      "Fetch data precisely with a powerful query language for APIs and runtime execution.",
+    description: "Schema design, Apollo Client/Server",
     rating: 4,
     icon: Icons.graphql,
   },
-  {
+  "Nest.js": {
     name: "Nest.js",
-    description:
-      "Create scalable and modular applications with a progressive Node.js framework.",
+    description: "Dependency Injection, Modules, Guards",
     rating: 4,
     icon: Icons.nestjs,
   },
-  {
-    name: "express.js",
-    description:
-      "Build web applications and APIs quickly using a fast, unopinionated Node.js framework.",
+  "Express.js": {
+    name: "Express.js",
+    description: "REST APIs, Middleware, Routing",
     rating: 5,
     icon: Icons.express,
   },
-  {
+  "Node.js": {
     name: "Node.js",
-    description:
-      "Run JavaScript on the server side, enabling dynamic and responsive applications.",
+    description: "Event Loop, Streams, File System",
     rating: 5,
     icon: Icons.nodejs,
   },
-  {
+  "MongoDB": {
     name: "MongoDB",
-    description:
-      "Store and retrieve data seamlessly with a flexible and scalable NoSQL database.",
+    description: "Aggregation Pipeline, Indexing, Mongoose",
     rating: 5,
     icon: Icons.mongodb,
   },
-  {
+  "TypeScript": {
     name: "Typescript",
-    description:
-      "Enhance JavaScript with static types, making code more understandable and reliable.",
+    description: "Type Safety, Interfaces, Generics",
     rating: 5,
     icon: Icons.typescript,
   },
-  {
+  "Javascript": {
     name: "Javascript",
-    description:
-      "Create interactive and dynamic web experiences with the versatile scripting language.",
+    description: "ES6+, Async/Await, DOM Manipulation",
     rating: 5,
     icon: Icons.javascript,
   },
-  {
+  "HTML 5": {
     name: "HTML 5",
-    description:
-      "Structure web content beautifully with the latest version of HyperText Markup Language.",
+    description: "Semantic HTML, Accessibility, SEO",
     rating: 4,
     icon: Icons.html5,
   },
-  {
+  "CSS 3": {
     name: "CSS 3",
-    description:
-      "Style web pages creatively with the latest iteration of Cascading Style Sheets.",
+    description: "Flexbox, Grid, Animations",
     rating: 4,
     icon: Icons.css3,
   },
-  {
+  "React Native": {
     name: "React Native",
-    description:
-      "Develop cross-platform mobile apps using React for consistent and engaging experiences.",
+    description: "Cross-platform mobile apps",
     rating: 4,
     icon: Icons.react,
   },
-  {
+  "Angular": {
     name: "Angular",
-    description:
-      "Build dynamic web apps with a TypeScript-based open-source framework by Google.",
+    description: "TypeScript-based web application framework",
     rating: 3,
     icon: Icons.angular,
   },
-  {
+  "Redux.js": {
     name: "Redux",
-    description:
-      "Manage app state effectively using a predictable and centralized state container.",
+    description: "State Management, Thunk/Saga",
     rating: 4,
     icon: Icons.redux,
   },
-  {
+  "Socket.io": {
     name: "Socket.io",
-    description:
-      "Enable real-time, bidirectional communication between clients and servers effortlessly.",
+    description: "Real-time communication, WebSockets",
     rating: 3,
     icon: Icons.socketio,
   },
-  {
+  "Material-UI": {
     name: "Material UI",
-    description:
-      "Create stunning and responsive UIs with a popular React UI framework.",
+    description: "Component Library, Theming",
     rating: 4,
     icon: Icons.mui,
   },
-
-  {
+  "Tailwind CSS": {
     name: "Tailwind CSS",
-    description:
-      "Design beautiful, modern websites faster with a utility-first CSS framework.",
+    description: "Utility-first CSS, Responsive Design",
     rating: 5,
     icon: Icons.tailwindcss,
   },
-  {
+  "AWS": {
     name: "AWS",
-    description:
-      "Utilize Amazon Web Services to build and deploy scalable, reliable, and secure applications.",
+    description: "EC2, S3, Lambda, Deployment",
     rating: 3,
     icon: Icons.amazonaws,
   },
-  {
+  "Bootstrap": {
     name: "Bootstrap",
-    description:
-      "Quickly create responsive and appealing web designs using a popular CSS framework.",
+    description: "Responsive Grid, Components",
     rating: 2,
     icon: Icons.bootstrap,
   },
-  {
+  "MySQL": {
     name: "MySQL",
-    description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
+    description: "Relational Database Design, SQL",
     rating: 2,
     icon: Icons.mysql,
   },
-  {
+  "SQL": {
+    name: "SQL",
+    description: "Relational queries",
+    rating: 3,
+    icon: Icons.mysql, // using mysql icon for sql
+  },
+  "Netlify": {
     name: "Netlify",
-    description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
+    description: "Deployment, CI/CD, Serverless Functions",
     rating: 4,
     icon: Icons.netlify,
   },
-];
+  "Git": {
+    name: "Git",
+    description: "Version Control, Branching, Merging",
+    rating: 5,
+    icon: Icons.gitHub, 
+  }
+};
 
-export const skills = skillsUnsorted
-  .slice()
-  .sort((a, b) => b.rating - a.rating);
+// Create a fallback skill object
+const fallbackSkill = (name: string): skillsInterface => ({
+  name,
+  description: "Experienced in " + name,
+  rating: 4,
+  icon: Icons.check, // Using a generic check icon if available logic fails, but check exists
+});
 
-export const featuredSkills = skills.slice(0, 6);
+// Map user skills to rich objects
+export const featuredSkills: skillsInterface[] = RESUME_DATA.skills.map(skillName => {
+  // Try exact match
+  if (knownSkills[skillName]) return knownSkills[skillName];
+  // Try match without case
+  const lowerName = skillName.toLowerCase();
+  const found = Object.values(knownSkills).find(s => s.name.toLowerCase() === lowerName);
+  if (found) return found;
+  
+  // Handle specific aliases
+  if (skillName === "Vue.js") return { name: "Vue.js", description: "Progressive JavaScript Framework", rating: 4, icon: Icons.page }; 
+  if (skillName === "Nuxt.js") return { name: "Nuxt.js", description: "The Intuitive Vue Framework", rating: 4, icon: Icons.page };
+  if (skillName === "Ant Design") return { name: "Ant Design", description: "UI Design Language", rating: 4, icon: Icons.retro };
+  if (skillName === "Amazon Cognito") return { name: "Amazon Cognito", description: "Identity Management", rating: 3, icon: Icons.user };
+  if (skillName === "Chart.js") return { name: "Chart.js", description: "Simple yet flexible charting", rating: 4, icon: Icons.media };
+  if (skillName === "CASL") return { name: "CASL", description: "Isomorphic Authorization", rating: 3, icon: Icons.check };
+  if (skillName === "Vuex") return { name: "Vuex", description: "State Management for Vue.js", rating: 3, icon: Icons.redux };
+
+  return fallbackSkill(skillName);
+});
+
+export const skills = featuredSkills;

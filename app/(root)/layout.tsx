@@ -15,7 +15,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
           <MainNav items={routesConfig.mainNav} />
           <nav className="flex items-center gap-5">
             {/* <Link
-                            href={"https://github.com/Johnbarkiya"}
+                            href={"https://github.com/john-felix-a"}
                             target="_blank"
                             className={cn(
                                 buttonVariants({
