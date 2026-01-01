@@ -5,18 +5,18 @@ import Script from "next/script";
 
 import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
+import { TypewriterText } from "@/components/common/typewriter-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
 import { PhotographyGrid } from "@/components/photography/photography-grid";
 import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
-import SkillsCard from "@/components/skills/skills-card";
+import SkillsSection from "@/components/skills/skills-section";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
-import { featuredSkills } from "@/config/skills";
 import { PHOTOS } from "@/app/data";
 import { cn } from "@/lib/utils";
 import profileImg from "@/public/profile-img.png";
@@ -80,21 +80,20 @@ export default function IndexPage() {
             height={100}
             width={100}
             sizes="100vw"
-            className="bg-primary rounded-full mb-0 h-auto md:mb-2 w-[60%] max-w-[16rem] border-[1px] border-primary"
+            className="rounded-full mb-0 h-auto md:mb-2 w-[70%] max-w-[20rem] border-b-[2px] border-primary"
             alt="John Felix - Full Stack Developer Portfolio"
             priority
           />
-          <AnimatedText
-            as="h1"
+          <TypewriterText
+            text="John Felix"
             delay={0.2}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            John Felix
-          </AnimatedText>
+            className="font-heading text-3xl sm:text-4xl md:text-4xl lg:text-5xl"
+            speed={150}
+          />
           <AnimatedText
             as="h3"
             delay={0.4}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
+            className="font-heading text-base sm:text-xl md:text-xl lg:text-xl"
           >
             Software developer
           </AnimatedText>
@@ -155,11 +154,11 @@ export default function IndexPage() {
             {pagesConfig.skills.description}
           </AnimatedText>
         </div>
-        <SkillsCard skills={featuredSkills} />
-        <AnimatedText delay={0.4} className="flex justify-center">
+        <SkillsSection />
+        <AnimatedText delay={0.4} className="flex justify-center mt-6">
           <Link href="/skills">
             <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All Skills
             </Button>
           </Link>
         </AnimatedText>

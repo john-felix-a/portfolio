@@ -31,6 +31,7 @@ import {
   User,
   X,
   Zap,
+  Shield,
 } from "lucide-react";
 import { AiFillStar } from "react-icons/ai";
 import { BiLaugh, BiSolidUser } from "react-icons/bi";
@@ -50,6 +51,7 @@ import {
   SiGmail,
   SiGraphql,
   SiHtml5,
+  SiInstagram,
   SiJavascript,
   SiLinkedin,
   SiMongodb,
@@ -67,6 +69,10 @@ import {
   SiTypescript,
   SiGithub,
   SiGit,
+  SiNuxtdotjs,
+  SiAntdesign,
+  SiPython,
+  SiApachespark,
 } from "react-icons/si";
 
 export const Icons = {
@@ -160,4 +166,11 @@ export const Icons = {
   paper: Scroll,
   aurora: Sparkles,
   synthwave: Music,
+  nuxtjs: SiNuxtdotjs,
+  antdesign: SiAntdesign,
+  python: SiPython,
+  spark: SiApachespark,
+  cognito: SiAmazonaws,
+  casl: Shield,
+  instagram: SiInstagram,
 };

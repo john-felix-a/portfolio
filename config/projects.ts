@@ -12,6 +12,7 @@ interface DescriptionDetailsInterface {
 }
 
 export interface ProjectInterface {
+  logo: string;
   id: string;
   type: "Personal" | "Professional";
   companyName: string;
@@ -40,6 +41,7 @@ export const Projects: ProjectInterface[] = RESUME_DATA.projects.map((proj, inde
 
   return {
     id: proj.id,
+    logo: proj.logo,
     type: "Professional", // Assumption based on context
     companyName: proj.title,
     category: ["Web Dev"], // Default category
