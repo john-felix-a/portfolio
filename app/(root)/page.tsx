@@ -23,7 +23,7 @@ import profileImg from "@/public/profile-img.png";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
-  description: `${pagesConfig.home.metadata.description}`,
+  description: `${pagesConfig.home.metadata.description} built with Next.js.`,
   alternates: {
     canonical: siteConfig.url,
   },
