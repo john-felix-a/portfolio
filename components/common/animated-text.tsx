@@ -20,8 +20,8 @@ const textVariants = {
     y: 0,
     transition: {
       delay,
-      duration: 0.6,
-      ease: "easeOut",
+      duration: 0.8,
+      ease: [0.19, 1.0, 0.22, 1.0], // Premium "Expo Out" feel
     },
   }),
 };
