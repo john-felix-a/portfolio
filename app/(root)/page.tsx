@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 import { AnimatedSection } from "@/components/common/animated-section";
+import { ParallaxSection } from "@/components/common/parallax-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { TypewriterText } from "@/components/common/typewriter-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
@@ -74,32 +75,34 @@ export default function IndexPage() {
       />
 
       <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 min-h-[100dvh] flex items-center">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center mt-0 md:-mt-20">
+        <div className="container flex max-w-[64rem] flex-col items-center gap-2 text-center mt-0 md:-mt-20">
           <Image
             src={profileImg}
             height={100}
             width={100}
             sizes="100vw"
-            className="rounded-full mb-0 h-auto md:mb-2 w-[70%] max-w-[20rem] border-b-[2px] border-primary"
+            className="rounded-full mb-6 h-auto md:mb-8 w-[70%] max-w-[20rem] border-b-[1px] border-primary"
             alt="John Felix - Full Stack Developer Portfolio"
             priority
           />
           <TypewriterText
             text="John Felix"
             delay={0.2}
-            className="font-heading text-3xl sm:text-4xl md:text-4xl lg:text-5xl"
+            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2"
             speed={150}
           />
           <AnimatedText
-            as="h3"
+            as="div"
             delay={0.4}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-xl"
+            className="font-heading text-lg sm:text-xl md:text-2xl lg:text-2xl text-muted-foreground"
           >
             Software developer
           </AnimatedText>
-          <div className="mt-4 max-w-[42rem] text-center">
-            <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Lazy mind, smart craft.
+          <div className="mt-8 max-w-[42rem] text-center">
+            <p className="text-lg sm:text-xl font-light italic tracking-wide">
+              <span className="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 bg-clip-text text-transparent">
+                Lazy mind, smart craft.
+              </span>
             </p>
           </div>
 
@@ -135,21 +138,22 @@ export default function IndexPage() {
           </AnimatedText>
         </div>
       </section>
-      <AnimatedSection
+      <ParallaxSection
         className="container space-y-6 bg-muted py-10"
         id="skills"
+        depth={20}
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center pb-5">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-4xl"
           >
             {pagesConfig.skills.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[42rem] leading-normal text-muted-foreground sm:leading-7 mb-8"
           >
             {pagesConfig.skills.description}
           </AnimatedText>
@@ -162,67 +166,58 @@ export default function IndexPage() {
             </Button>
           </Link>
         </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="right"
+      </ParallaxSection>
+      <ParallaxSection
         className="container space-y-6 py-10 my-14"
         id="projects"
+        depth={40}
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center pb-5">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-4xl"
           >
             {pagesConfig.projects.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[42rem] leading-normal text-muted-foreground sm:leading-7 mb-8"
           >
             {pagesConfig.projects.description}
           </AnimatedText>
         </div>
         <div className="mx-auto grid justify-center gap-4 md:w-full lg:grid-cols-3">
           {featuredProjects.map((exp, index) => (
-            <AnimatedSection
-              key={exp.id}
-              delay={0.1 * (index + 1)}
-              direction="up"
-            >
+            <div key={exp.id}>
               <ProjectCard project={exp} />
-            </AnimatedSection>
+            </div>
           ))}
         </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
+        <AnimatedText delay={0.4} className="flex justify-center mt-4">
           <Link href="/projects">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
         </AnimatedText>
-        {/* <div className="mx-auto text-center md:max-w-[58rem]">
-                    <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-                        See all the relevant experiences.
-                    </p>
-                </div> */}
-      </AnimatedSection>
-      <AnimatedSection
-        direction="down"
+      </ParallaxSection>
+      <ParallaxSection
         className="container space-y-6 bg-muted py-10 my-14"
         id="photography"
+        depth={60}
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center pb-5">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-4xl"
           >
             {pagesConfig.contributions.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[42rem] leading-normal text-muted-foreground sm:leading-7 mb-8"
           >
             {pagesConfig.contributions.description}
           </AnimatedText>
@@ -231,53 +226,49 @@ export default function IndexPage() {
           {/* Reuse the PhotographyGrid with a slice of photos for 'Featured' feel */}
           <PhotographyGrid photos={PHOTOS.slice(0, 3)} />
         </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
+        <AnimatedText delay={0.4} className="flex justify-center mt-4">
           <Link href="/photography">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
         </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="left"
+      </ParallaxSection>
+      <ParallaxSection
         className="container space-y-6 py-10 my-14"
         id="experience"
+        depth={80}
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center pb-5">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-4xl"
           >
             {pagesConfig.experience.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[42rem] leading-normal text-muted-foreground sm:leading-7 mb-8"
           >
             {pagesConfig.experience.description}
           </AnimatedText>
         </div>
         <div className="mx-auto grid justify-center gap-4 md:w-full lg:grid-cols-3">
           {experiences.slice(0, 3).map((experience, index) => (
-            <AnimatedSection
-              key={experience.id}
-              delay={0.1 * (index + 1)}
-              direction="up"
-            >
+            <div key={experience.id}>
               <ExperienceCard experience={experience} />
-            </AnimatedSection>
+            </div>
           ))}
         </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
+        <AnimatedText delay={0.4} className="flex justify-center mt-4">
           <Link href="/experience">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
         </AnimatedText>
-      </AnimatedSection>
+      </ParallaxSection>
     </ClientPageWrapper>
   );
 }

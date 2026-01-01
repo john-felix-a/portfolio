@@ -28,6 +28,11 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           </CustomTooltip>
         ))}
       </div>
+      <div className="container flex items-center justify-center pb-8">
+        <p className="text-muted-foreground text-sm font-medium tracking-wide">
+          Focused on building things that last.
+        </p>
+      </div>
     </footer>
   );
 }

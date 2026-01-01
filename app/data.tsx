@@ -61,7 +61,7 @@ export const RESUME_DATA: ResumeData = {
     {
       id: "exp-3",
       role: "Software Developer",
-      company: "OneGlance Software Services Pvt Ltd",
+      company: "OneGlance Software Pvt Ltd",
       period: "06/2022 - 08/2023",
       location: "Chennai, India",
       description: [

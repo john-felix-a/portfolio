@@ -40,11 +40,14 @@
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 213 31% 91%;
+    --background: 240 10% 4%;
+    /* Soft Deep Black */
+    --foreground: 240 5% 90%;
+    /* Relaxed Off-White */
 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    /* Soft Reading Gray */
 
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
