@@ -88,14 +88,19 @@ export default function Project({ params }: ProjectPageProps) {
         </div>
       </div>
 
-      <Image
+      <div className="my-8 w-full h-[405px] flex items-center justify-center bg-black rounded-md border border-border">
+        {/* <Image
         src={project.companyLogoImg}
         alt={project.companyName}
         width={720}
         height={405}
         className="my-8 rounded-md border bg-muted transition-colors"
         priority
-      />
+      /> */}
+        <span className="font-bold text-4xl uppercase tracking-wider text-center px-4 bg-gradient-to-r from-zinc-100 via-blue-300 to-zinc-100 bg-clip-text text-transparent">
+          {project.logo || project.companyName}
+        </span>
+      </div>
 
       <div className="mb-7 ">
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">

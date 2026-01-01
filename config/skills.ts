@@ -4,155 +4,132 @@ import { RESUME_DATA } from "@/app/data";
 export interface skillsInterface {
   name: string;
   description: string;
-  rating: number;
   icon: any;
+  category: "Frontend" | "Backend" | "Database" | "Programming Languages" | "Cloud (AWS)" | "Data Engineering" | "Tools" | "Other";
 }
 
 // Map of known skills to their rich definitions
 const knownSkills: Record<string, skillsInterface> = {
+  // Frontend
   "Next.js": {
     name: "Next.js",
-    description: "App Router, Server Components, SSR/SSG",
-    rating: 5,
+    description: "React framework for fast, SEO-optimized, production-ready web applications.",
     icon: Icons.nextjs,
+    category: "Frontend",
   },
-  "React.js": {
-    name: "React",
-    description: "Hooks, Context, Performance Optimization",
-    rating: 5,
-    icon: Icons.react,
+  "Nuxt.js": {
+    name: "Nuxt.js",
+    description: "Vue-based framework for server-rendered and static web applications.",
+    icon: Icons.nuxtjs,
+    category: "Frontend",
   },
-  "React": {
-    name: "React",
-    description: "Hooks, Context, Performance Optimization",
-    rating: 5,
-    icon: Icons.react,
-  },
-  "GraphQL": {
-    name: "GraphQL",
-    description: "Schema design, Apollo Client/Server",
-    rating: 4,
-    icon: Icons.graphql,
-  },
-  "Nest.js": {
-    name: "Nest.js",
-    description: "Dependency Injection, Modules, Guards",
-    rating: 4,
-    icon: Icons.nestjs,
-  },
-  "Express.js": {
-    name: "Express.js",
-    description: "REST APIs, Middleware, Routing",
-    rating: 5,
-    icon: Icons.express,
-  },
-  "Node.js": {
-    name: "Node.js",
-    description: "Event Loop, Streams, File System",
-    rating: 5,
-    icon: Icons.nodejs,
-  },
-  "MongoDB": {
-    name: "MongoDB",
-    description: "Aggregation Pipeline, Indexing, Mongoose",
-    rating: 5,
-    icon: Icons.mongodb,
-  },
-  "TypeScript": {
-    name: "Typescript",
-    description: "Type Safety, Interfaces, Generics",
-    rating: 5,
-    icon: Icons.typescript,
-  },
-  "Javascript": {
-    name: "Javascript",
-    description: "ES6+, Async/Await, DOM Manipulation",
-    rating: 5,
-    icon: Icons.javascript,
-  },
-  "HTML 5": {
-    name: "HTML 5",
-    description: "Semantic HTML, Accessibility, SEO",
-    rating: 4,
-    icon: Icons.html5,
-  },
-  "CSS 3": {
-    name: "CSS 3",
-    description: "Flexbox, Grid, Animations",
-    rating: 4,
-    icon: Icons.css3,
-  },
-  "React Native": {
-    name: "React Native",
-    description: "Cross-platform mobile apps",
-    rating: 4,
-    icon: Icons.react,
-  },
-  "Angular": {
-    name: "Angular",
-    description: "TypeScript-based web application framework",
-    rating: 3,
-    icon: Icons.angular,
-  },
-  "Redux.js": {
+  "Redux": {
     name: "Redux",
-    description: "State Management, Thunk/Saga",
-    rating: 4,
+    description: "State management for handling complex frontend application data.",
     icon: Icons.redux,
+    category: "Frontend",
   },
-  "Socket.io": {
-    name: "Socket.io",
-    description: "Real-time communication, WebSockets",
-    rating: 3,
-    icon: Icons.socketio,
-  },
-  "Material-UI": {
+  "Material UI": {
     name: "Material UI",
-    description: "Component Library, Theming",
-    rating: 4,
+    description: "Prebuilt React UI components following Material Design.",
     icon: Icons.mui,
+    category: "Frontend",
+  },
+  "Ant Design": {
+    name: "Ant Design",
+    description: "Enterprise-focused UI component library for large applications.",
+    icon: Icons.antdesign,
+    category: "Frontend",
   },
   "Tailwind CSS": {
     name: "Tailwind CSS",
-    description: "Utility-first CSS, Responsive Design",
-    rating: 5,
+    description: "Utility-first CSS framework for rapid UI development.",
     icon: Icons.tailwindcss,
+    category: "Frontend",
   },
-  "AWS": {
-    name: "AWS",
-    description: "EC2, S3, Lambda, Deployment",
-    rating: 3,
-    icon: Icons.amazonaws,
+  "CASL": {
+    name: "CASL",
+    description: "Authorization library for role- and permission-based UI access control.",
+    icon: Icons.casl,
+    category: "Frontend",
   },
-  "Bootstrap": {
-    name: "Bootstrap",
-    description: "Responsive Grid, Components",
-    rating: 2,
-    icon: Icons.bootstrap,
+
+  // Backend
+  "Node.js": {
+    name: "Node.js",
+    description: "JavaScript runtime for building scalable backend services.",
+    icon: Icons.nodejs,
+    category: "Backend",
   },
-  "MySQL": {
-    name: "MySQL",
-    description: "Relational Database Design, SQL",
-    rating: 2,
-    icon: Icons.mysql,
+  "Express.js": {
+    name: "Express.js",
+    description: "Minimal backend framework for RESTful APIs.",
+    icon: Icons.express,
+    category: "Backend",
   },
+  "Socket.io": {
+    name: "Socket.io",
+    description: "Real-time communication for live updates and events.",
+    icon: Icons.socketio,
+    category: "Backend",
+  },
+
+  // Database
   "SQL": {
     name: "SQL",
-    description: "Relational queries",
-    rating: 3,
-    icon: Icons.mysql, // using mysql icon for sql
+    description: "Relational databases for structured and transactional data.",
+    icon: Icons.mysql,
+    category: "Database",
   },
-  "Netlify": {
-    name: "Netlify",
-    description: "Deployment, CI/CD, Serverless Functions",
-    rating: 4,
-    icon: Icons.netlify,
+
+  // Programming Languages
+  "JavaScript": {
+    name: "JavaScript",
+    description: "Core language for frontend and backend web development.",
+    icon: Icons.javascript,
+    category: "Programming Languages",
   },
+  "TypeScript": {
+    name: "TypeScript",
+    description: "Strongly typed JavaScript for scalable applications.",
+    icon: Icons.typescript,
+    category: "Programming Languages",
+  },
+  "Python": {
+    name: "Python",
+    description: "General-purpose language used for backend logic and data processing.",
+    icon: Icons.python,
+    category: "Programming Languages",
+  },
+
+  // Cloud (AWS)
+  "AWS": {
+    name: "AWS",
+    description: "Cloud platform for scalable application infrastructure.",
+    icon: Icons.amazonaws,
+    category: "Cloud (AWS)",
+  },
+  "Amazon Cognito": {
+    name: "Amazon Cognito",
+    description: "Managed authentication and authorization service.",
+    icon: Icons.cognito,
+    category: "Cloud (AWS)",
+  },
+
+  // Data Engineering
+  "Apache Spark": {
+    name: "Apache Spark",
+    description: "Distributed engine for processing large datasets.",
+    icon: Icons.spark,
+    category: "Data Engineering",
+  },
+
+  // Tools
   "Git": {
     name: "Git",
-    description: "Version Control, Branching, Merging",
-    rating: 5,
-    icon: Icons.git, 
+    description: "Version control system for source code management.",
+    icon: Icons.git,
+    category: "Tools",
   }
 };
 
@@ -160,28 +137,14 @@ const knownSkills: Record<string, skillsInterface> = {
 const fallbackSkill = (name: string): skillsInterface => ({
   name,
   description: "Experienced in " + name,
-  rating: 4,
-  icon: Icons.check, // Using a generic check icon if available logic fails, but check exists
+  icon: Icons.check,
+  category: "Other",
 });
 
 // Map user skills to rich objects
 export const featuredSkills: skillsInterface[] = RESUME_DATA.skills.map(skillName => {
-  // Try exact match
-  if (knownSkills[skillName]) return knownSkills[skillName];
-  // Try match without case
-  const lowerName = skillName.toLowerCase();
-  const found = Object.values(knownSkills).find(s => s.name.toLowerCase() === lowerName);
-  if (found) return found;
-  
-  // Handle specific aliases
-  if (skillName === "Vue.js") return { name: "Vue.js", description: "Progressive JavaScript Framework", rating: 4, icon: Icons.page }; 
-  if (skillName === "Nuxt.js") return { name: "Nuxt.js", description: "The Intuitive Vue Framework", rating: 4, icon: Icons.page };
-  if (skillName === "Ant Design") return { name: "Ant Design", description: "UI Design Language", rating: 4, icon: Icons.retro };
-  if (skillName === "Amazon Cognito") return { name: "Amazon Cognito", description: "Identity Management", rating: 3, icon: Icons.user };
-  if (skillName === "Chart.js") return { name: "Chart.js", description: "Simple yet flexible charting", rating: 4, icon: Icons.media };
-  if (skillName === "CASL") return { name: "CASL", description: "Isomorphic Authorization", rating: 3, icon: Icons.check };
-  if (skillName === "Vuex") return { name: "Vuex", description: "State Management for Vue.js", rating: 3, icon: Icons.redux };
-
+  const match = knownSkills[skillName];
+  if (match) return match;
   return fallbackSkill(skillName);
 });
 

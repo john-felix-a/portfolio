@@ -10,13 +10,12 @@ import { Icons } from "@/components/common/icons";
 import { PhotographyGrid } from "@/components/photography/photography-grid";
 import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
-import SkillsCard from "@/components/skills/skills-card";
+import SkillsSection from "@/components/skills/skills-section";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
-import { featuredSkills } from "@/config/skills";
 import { PHOTOS } from "@/app/data";
 import { cn } from "@/lib/utils";
 import profileImg from "@/public/profile-img.png";
@@ -155,11 +154,11 @@ export default function IndexPage() {
             {pagesConfig.skills.description}
           </AnimatedText>
         </div>
-        <SkillsCard skills={featuredSkills} />
-        <AnimatedText delay={0.4} className="flex justify-center">
+        <SkillsSection />
+        <AnimatedText delay={0.4} className="flex justify-center mt-6">
           <Link href="/skills">
             <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All Skills
             </Button>
           </Link>
         </AnimatedText>

@@ -13,13 +13,16 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="relative p-6 w-full bg-background border border-border rounded-lg">
-      <div className="relative w-full h-[200px]">
-        <Image
+      <div className="relative w-full h-[200px] flex items-center justify-center bg-black rounded-lg border border-border">
+        {/* <Image
           className="rounded-lg border border-border object-cover"
           src={project.companyLogoImg}
           alt="img"
           fill
-        />
+        /> */}
+        <span className="font-bold text-xl uppercase tracking-wider text-center px-4 bg-gradient-to-r from-zinc-100 via-blue-300 to-zinc-100 bg-clip-text text-transparent">
+          {project.logo}
+        </span>
       </div>
       <div className="pt-5 space-y-3">
         <h5 className="text-2xl font-bold tracking-tight text-foreground">

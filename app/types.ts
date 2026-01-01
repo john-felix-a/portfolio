@@ -20,6 +20,7 @@ export interface ResumeData {
   projects: {
     id: string;
     title: string;
+    logo: string;
     period: string;
     description: string;
     technologies: string[];
@@ -42,6 +43,8 @@ export interface PhotoItem {
   category: string;
   src: string;
   title: string;
+  instagramId?: string;
+  instagramUrl?: string;
   exif?: {
     camera: string;
     lens: string;
