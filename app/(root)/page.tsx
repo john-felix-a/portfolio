@@ -5,6 +5,7 @@ import Script from "next/script";
 
 import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
+import { TypewriterText } from "@/components/common/typewriter-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
 import { PhotographyGrid } from "@/components/photography/photography-grid";
@@ -79,21 +80,20 @@ export default function IndexPage() {
             height={100}
             width={100}
             sizes="100vw"
-            className="bg-primary rounded-full mb-0 h-auto md:mb-2 w-[60%] max-w-[16rem] border-[1px] border-primary"
+            className="rounded-full mb-0 h-auto md:mb-2 w-[70%] max-w-[20rem] border-b-[2px] border-primary"
             alt="John Felix - Full Stack Developer Portfolio"
             priority
           />
-          <AnimatedText
-            as="h1"
+          <TypewriterText
+            text="John Felix"
             delay={0.2}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            John Felix
-          </AnimatedText>
+            className="font-heading text-3xl sm:text-4xl md:text-4xl lg:text-5xl"
+            speed={150}
+          />
           <AnimatedText
             as="h3"
             delay={0.4}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
+            className="font-heading text-base sm:text-xl md:text-xl lg:text-xl"
           >
             Software developer
           </AnimatedText>
