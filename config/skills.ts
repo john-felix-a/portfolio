@@ -152,7 +152,7 @@ const knownSkills: Record<string, skillsInterface> = {
     name: "Git",
     description: "Version Control, Branching, Merging",
     rating: 5,
-    icon: Icons.gitHub, 
+    icon: Icons.git, 
   }
 };
 

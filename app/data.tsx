@@ -72,14 +72,16 @@ export const RESUME_DATA: ResumeData = {
             title: "Admin Portal for Event-Tix.us",
             period: "10/2024 - Present",
             description: "Developed a robust admin dashboard to manage events, agents, and user activities—enabling seamless oversight and control of the ticketing platform's operations.",
-            technologies: ["Next.js", "Tailwind", "Ant Design"]
+            technologies: ["Next.js", "Tailwind", "Ant Design"],
+            image: "https://picsum.photos/seed/admin/800/600"
         },
         {
             id: "proj-2",
             title: "Booking & Payment System for Event-Tix.us",
             period: "10/2024 - Present",
             description: "Developed a complete event booking workflow with Stripe integration, enabling users to browse events, select tickets, complete secure checkouts, and receive instant digital access.",
-            technologies: ["Next.js", "Tailwind", "Ant Design", "Stripe Integration"]
+            technologies: ["Next.js", "Tailwind", "Ant Design", "Stripe Integration"],
+            image: "https://picsum.photos/seed/booking/800/600"
         }
     ],
     education: [

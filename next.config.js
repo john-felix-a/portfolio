@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Config updated for Vercel deployment cache flush
   images: {
     domains: ["picsum.photos", "www.instagram.com", "instagram.com"],
   },
