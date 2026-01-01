@@ -23,6 +23,7 @@ export interface ResumeData {
     period: string;
     description: string;
     technologies: string[];
+    image?: string;
   }[];
   education: {
     degree: string;

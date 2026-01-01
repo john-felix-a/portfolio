@@ -47,7 +47,7 @@ export const Projects: ProjectInterface[] = RESUME_DATA.projects.map((proj, inde
     techStack: proj.technologies,
     startDate,
     endDate,
-    companyLogoImg: "/profile-img.png", // specific placeholder or reuse one from assets
+    companyLogoImg: proj.image || "/profile-img.png", // specific placeholder or reuse one from assets
     pagesInfoArr: [
        {
          title: "Overview",
