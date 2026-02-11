@@ -17,6 +17,12 @@ const knownSkills: Record<string, skillsInterface> = {
     icon: Icons.nextjs,
     category: "Frontend",
   },
+  "React.js": {
+    name: "React.js",
+    description: "React is a component-based JavaScript library used to build dynamic and interactive user interfaces.",
+    icon: Icons.react,
+    category: "Frontend",
+  },
   "Nuxt.js": {
     name: "Nuxt.js",
     description: "Vue-based framework for server-rendered and static web applications.",
