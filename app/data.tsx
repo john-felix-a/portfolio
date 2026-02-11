@@ -13,6 +13,7 @@ export const RESUME_DATA: ResumeData = {
     "Experienced Software Developer with a strong background in building scalable, high-quality web applications using Next.js, Nuxt.js, React.js, and TypeScript. Proven track record of delivering projects across industries including ERP, catering, sustainability, and Hospital Management Systems. Skilled in developing apps from scratch, implementing Server-Side Rendering (SSR), and building real-time features with Socket.io. Adept at collaborating with cross-functional teams, maintaining code quality through reviews, and following agile methodologies.",
   skills: [
     "Next.js",
+    "React.js",
     "Nuxt.js",
     "Redux",
     "Material UI",
